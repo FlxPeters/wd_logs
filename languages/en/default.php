@@ -32,6 +32,8 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MSC'][''] = '';
+$GLOBALS['TL_LANG']['MSC']['errorLog'] = 'Error Log';
+$GLOBALS['TL_LANG']['MSC']['emailLog'] = 'E-Mail Log';
+$GLOBALS['TL_LANG']['MSC']['noFile'] = 'No Log-File available';
 
 ?>

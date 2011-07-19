@@ -35,9 +35,5 @@
 $GLOBALS['TL_LANG']['MOD']['logs'] = array('Logdateien', 'Logdateien anzeigen');
 
 
-/**
- * Front end modules
- */
-$GLOBALS['TL_LANG']['FMD'][''] = array('', '');
 
 ?>
