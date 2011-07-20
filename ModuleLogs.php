@@ -61,7 +61,7 @@ class ModuleLogs extends BackendModule {
 			}
 			fclose($errorLogFile);
 
-			$arrErrorLogRaw = array_slice($arrErrorLogRaw, -11, 10);
+			$arrErrorLogRaw = array_reverse(array_slice($arrErrorLogRaw, -11, 10));
 
 			foreach ($arrErrorLogRaw as $k => $strLog) {
 				$strDate = trim(substr($strLog, 1, 20));
@@ -74,7 +74,7 @@ class ModuleLogs extends BackendModule {
 				$arrErrorLog[$strDay][$k]['text'] = substr($strLog, 22);
 				$arrErrorLog[$strDay][$k]['datim'] = substr($strDate, 0, 20);
 			}
-			$this->Template->errorLog = array_reverse($arrErrorLog);
+			$this->Template->errorLog = $arrErrorLog;
 		}
 
 		if (file_exists(TL_ROOT.'/system/logs/email.log')) {
