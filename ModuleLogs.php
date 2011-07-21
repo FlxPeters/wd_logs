@@ -78,7 +78,7 @@ class ModuleLogs extends BackendModule {
 		}
 
 		if (file_exists(TL_ROOT.'/system/logs/email.log')) {
-			$errorLogFile = fopen(TL_ROOT.'/system/logs/error.log', 'r');
+			$errorLogFile = fopen(TL_ROOT.'/system/logs/email.log', 'r');
 			$i = 0;
 			while (!feof($errorLogFile)) {
 				$arrEmailLogRaw[] = fgets($errorLogFile, 1024);
