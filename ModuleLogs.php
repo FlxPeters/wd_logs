@@ -61,7 +61,7 @@ class ModuleLogs extends BackendModule {
 			}
 			fclose($errorLogFile);
 
-			$arrErrorLogRaw = array_reverse(array_slice($arrErrorLogRaw, -11, 10));
+			$arrErrorLogRaw = array_reverse(array_slice($arrErrorLogRaw, -16, 15));
 
 			foreach ($arrErrorLogRaw as $k => $strLog) {
 				$strDate = trim(substr($strLog, 1, 20));
@@ -78,14 +78,14 @@ class ModuleLogs extends BackendModule {
 		}
 
 		if (file_exists(TL_ROOT.'/system/logs/email.log')) {
-			$errorLogFile = fopen(TL_ROOT.'/system/logs/email.log', 'r');
+            $emailLogFile = fopen(TL_ROOT.'/system/logs/email.log', 'r');
 			$i = 0;
-			while (!feof($errorLogFile)) {
-				$arrEmailLogRaw[] = fgets($errorLogFile, 1024);
+			while (!feof($emailLogFile)) {
+                $arrEmailLogRaw[] = fgets($emailLogFile, 1024);
 			}
-			fclose($errorLogFile);
+			fclose($emailLogFile);
 
-			$arrEmailLogRaw = array_slice($arrErrorLogRaw, -11, 10);
+            $arrEmailLogRaw = array_slice($arrEmailLogRaw, -16, 15);
 
 			foreach ($arrEmailLogRaw as $k => $strLog) {
 				$strDate = trim(substr($strLog, 1, 20));
